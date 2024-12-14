@@ -21,7 +21,7 @@ export default function Admin() {
     formData.append("panelColor", panelColor)
     formData.append("textColor", textColor)
     formData.append("productPic", productPic)
-    const response = await axios.post("http://localhost:4000/api/workouts/createWorkout", formData)
+    const response = await axios.post("https://backend-website-in-react-backend.vercel.app/api/workouts/createWorkout", formData)
     try {
       setState(response.data)
       setProductName('')
@@ -41,7 +41,7 @@ export default function Admin() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/workouts");
+        const response = await axios.get("https://backend-website-in-react-backend.vercel.app/api/workouts");
         setShowProducts(response.data)
       } catch (error) {
         console.log(error)
@@ -59,7 +59,7 @@ export default function Admin() {
     }
   }, [state]);
   const deleteProduct = async (id) => {
-    const response = await fetch(`http://localhost:4000/api/workouts/delete/${id}`);
+    const response = await fetch(`https://backend-website-in-react-backend.vercel.app/api/workouts/delete/${id}`);
     const json = await response.json();
     if (response.ok) {
       setState(json)

@@ -18,7 +18,7 @@ export default function Update() {
     const { id } = useParams();
     useEffect(() => {
         const fethData = async () => {
-            const response = await axios.get(`http://localhost:4000/api/workouts/update/${id}`)
+            const response = await axios.get(`https://backend-website-in-react-backend.vercel.app/api/workouts/update/${id}`)
             const data = response.data;
             setProductName(data.productName)
             setProductPrice(data.productPrice)
@@ -41,7 +41,7 @@ export default function Update() {
         }else{
             console.log("file not uploaded")
         }
-        const response =await axios.put(`http://localhost:4000/api/workouts/update/${id}` , formData,{
+        const response =await axios.put(`https://backend-website-in-react-backend.vercel.app/api/workouts/update/${id}` , formData,{
             headers: {
                 "Content-Type": "multipart/form-data"  // Ensure the request content is form-data
             }

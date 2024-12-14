@@ -9,7 +9,7 @@ export default function Home() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:4000/api/workouts")
+                const response = await axios.get("https://backend-website-in-react-backend.vercel.app/api/workouts")
                 setWorkouts(response.data)
             } catch (error) {
                 console.log(error)
